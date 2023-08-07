@@ -1,0 +1,86 @@
+// uverrsal selecter me margin pading zero
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  height: 100vh;
+  overflow-x: hidden; // right diretion me flow karna alowe hai nhi bilkul bhi nhi hai
+
+  overflow-y: auto; // y dictreaction me scrooll kar sakte ho
+}
+
+.container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto; // left nd right side es tarha se margin lagaya jata hi center me aajaye
+  padding: 20px; // border nd content  ke bich ke space ko pading bola jata hai
+}
+
+.container h1 {
+  margin: 20px 100px; //by designer
+  text-align: center;
+  margin-bottom: 20px; //by designer
+  font-size: 3rem; //by designer
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap; // wrap nhi karenge to saare element ak single row me aajyenge  by deflout horizontal hota hai element  flexrap se sare element niche aajenge
+  justify-content: space-between; // enke bt space hone chahiye
+}
+
+.card {
+  width: 32%; //why 32  kahi n kahi hum mention kar diye ak row me 3 hi elemnt aane vale hai
+
+  position: relative; //image ke upper overlap kar raha hai text
+  margin-bottom: 20px; //by deginer
+  border-radius: 10px; // corner ko rounded karne ke liye
+  overflow: hidden; //kis bhi prakar ka overflow ho raha hai to useee hide kar dena
+}
+
+.card img {
+  width: 100%; //
+  height: 100%;
+  filter: grayscale(100%);
+  box-shadow: 0 0 20px #333;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  filter: drop-shadow(0 0 10px #333);
+}
+
+.card:hover img {
+  filter: grayscale(0%);
+}
+
+.card figcaption {
+  position: absolute; //overlap karne ke liye
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 20%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: 0.3s;
+}
+
+.card:hover figcaption {
+  opacity: 1;
+  transform: scale(1.03);
+}
